@@ -32,7 +32,7 @@ jobs:
         dotnet-version: 7.0.x
     - run: dotnet tool restore
     - run: dotnet coverage collect dotnet test --output ./output.cobertura.xml --output-format cobertura
-    - run: dotnet reportgenerator -reports:./output.cobertura.xml -targetdir:"." -reporttypes:Clover -assemblyfilters:"-Humanizer;-Microsoft.TestPlatform*;-Microsoft.VisualStudio*;-xunit*;-Pipelines.Sockets*;"
+    - run: dotnet reportgenerator -reports:./output.cobertura.xml -targetdir:"." -reporttypes:Clover -assemblyfilters:"-Humanizer;-Microsoft.TestPlatform*;-Microsoft.VisualStudio*;-xunit*;-Pipelines.Sockets*;-StackExchange.Redis*;"
     - uses: paambaati/codeclimate-action@v3.2.0
       env:
         CC_TEST_REPORTER_ID: 8d3fcb5f556fbd621341c5afdf6ce5611a3bf47bc8b9f830cd87adcee5315469
