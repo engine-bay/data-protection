@@ -28,7 +28,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EngineBay.Core" Version="5.9.0" />
+    <PackageReference Include="EngineBay.Core" Version="6.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="7.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis"
       Version="7.0.10" />
