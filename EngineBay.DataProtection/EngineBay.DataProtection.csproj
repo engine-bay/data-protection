@@ -27,12 +27,18 @@
     <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
 
-  <ItemGroup Condition="$(Configuration)=='Dev'">
+  <Choose>
+		<When Condition="'$(ASPNETCORE_ENVIRONMENT)' == 'Development'">
+			<ItemGroup>
     <ProjectReference Include="../../core/EngineBay.Core/EngineBay.Core.csproj" />
   </ItemGroup>
-  <ItemGroup Condition="$(Configuration)!='Dev'">
+	</When>
+  <Otherwise>
+	<ItemGroup>
     <PackageReference Include="EngineBay.Core" Version="6.1.0" />
-  </ItemGroup>
+    </ItemGroup>
+  </Otherwise>
+	</Choose>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="7.0.10" />
