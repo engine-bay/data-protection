@@ -10,7 +10,7 @@ DataProtection module for EngineBay published to [EngineBay.DataProtection](http
 
 Registering and configuring this module will add a [DataProtectionProvider](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider?view=aspnetcore-7.0) to your service collection, making it available for dependency injection. You can use this provider to encrypt and decrypt text, which is useful when storing sensitive data. 
 
-For any fields that you wish to be encrypted while stored in your database, the DataProtectionProvider is used to encrypt before storing, and decrypt when you wish to access the value. This means that the data protection mechanism is agnostic to which database system you use.
+For any fields that you wish to be encrypted while stored in your database, the DataProtectionProvider should be used to encrypt before storing, and decrypt when you wish to access the value. This means that the data protection mechanism is agnostic to which database system you use.
 
 **Warning**: Whilst this module provides the options to store your encryption keys in a local files system or on a redis server, it cannot back up your keystore. Ensure you have a secure backup strategy. If you lose the keys, you will lose access to the data.
 
@@ -40,7 +40,7 @@ For an example of a model with a field that is stored encrypted at rest, see the
 
 ### Registration
 
-See the [Demo Module registration guide](https://github.com/engine-bay/demo-module).
+See the [Demo API registration guide](https://github.com/engine-bay/demo-api).
 
 ### Environment Variables
 
