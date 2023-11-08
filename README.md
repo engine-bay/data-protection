@@ -40,8 +40,12 @@ For an example of a model with a field that is stored encrypted at rest, see the
 
 ### Registration
 
-See the [Demo API registration guide](https://github.com/engine-bay/demo-api).
+This module cannot run on its own. You will need to register it in your application to use its functionality. See the [Demo API registration guide](https://github.com/engine-bay/demo-api).
 
 ### Environment Variables
 
 See the [Documentation Portal](https://github.com/engine-bay/documentation-portal/blob/main/EngineBay.DocumentationPortal/DocumentationPortal/docs/documentation/configuration/environment-variables.md#data-protection).
+
+## Dependencies
+
+* [EngineBay.Core](https://github.com/engine-bay/core)
