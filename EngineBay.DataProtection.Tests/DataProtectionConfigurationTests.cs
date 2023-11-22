@@ -2,11 +2,30 @@ namespace EngineBay.DataProtection.Tests
 {
     using System;
     using EngineBay.DataProtection;
+    using Microsoft.AspNetCore.DataProtection;
+    using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
     using Xunit;
 
     public class DataProtectionConfigurationTests
     {
+        // Moved test here to prevent parallel test execution changing the env vars while tests are executing
+        [Fact]
+        public void AddKeyStoreProviderFileSystemShouldSetPersistKeysToFileSystem()
+        {
+            // Arrange
+            Environment.SetEnvironmentVariable(EnvironmentVariableConstants.DATAPROTECTIONKEYLIFETIMEDAYS, null);
+            var services = new ServiceCollection();
+
+            // Act
+            DataProtectionKeyStoreConfiguration.AddKeyStoreProvider(services);
+
+            // Assert
+            var serviceProvider = services.BuildServiceProvider();
+            var dataProtectionProvider = serviceProvider.GetServices<IDataProtectionProvider>();
+            Assert.NotNull(dataProtectionProvider);
+        }
+
         [Fact]
         public void GetKeyLifetimeReturnsDefaultIfEnvironmentVariableNotPresent()
         {
