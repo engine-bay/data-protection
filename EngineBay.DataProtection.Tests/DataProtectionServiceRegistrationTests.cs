@@ -2,7 +2,6 @@ namespace EngineBay.DataProtection.Tests
 {
     using EngineBay.DataProtection;
     using Microsoft.AspNetCore.DataProtection;
-    using Microsoft.AspNetCore.DataProtection.KeyManagement;
     using Microsoft.Extensions.DependencyInjection;
     using Xunit;
 
