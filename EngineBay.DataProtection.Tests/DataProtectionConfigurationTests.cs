@@ -2,7 +2,6 @@ namespace EngineBay.DataProtection.Tests
 {
     using System;
     using EngineBay.DataProtection;
-    using Microsoft.EntityFrameworkCore.Diagnostics;
     using Xunit;
 
     public class DataProtectionConfigurationTests
